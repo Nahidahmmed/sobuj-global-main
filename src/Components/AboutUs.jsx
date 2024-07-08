@@ -3,7 +3,7 @@ import heroImg from '../../assets/college admission-amico.svg'
 import Lightning from '../../assets/Lightning Vector.svg'
 import vision from '../../assets/Vision Icon.svg'
 import mission from '../../assets/Mission Icon.svg'
-import '../../App.css'
+import '../App.css'
 const AboutUs = () => {
     const Card = ({ number, text }) => {
         return (
