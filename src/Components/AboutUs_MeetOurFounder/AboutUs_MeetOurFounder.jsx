@@ -2,7 +2,12 @@ import './AboutUs_MeetOurFounder.css'
 
 const AboutUs_MeetOurFounder = () => {
     return (
-        <div className="max-w-[1152px] mx-auto pb-[120px] pt-[96px]">
+        <div className="max-w-[1152px] mx-auto pb-[120px] pt-[96px] relative">
+            <div className='absolute top-3 -left-36 -z-10'>
+                <svg width="371" height="359" viewBox="0 0 371 359" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-20.2004 250.269L114.461 74.3497L-2.27924 353.146L195.187 5.28541L78.3684 328.804L193.531 154.494L159.485 304.333L237.316 217.381L252.112 315.315L329.131 269.501L361.486 335.804" stroke="#F5F5F5" strokeWidth="20" />
+                </svg>
+            </div>
             <div className='lg:px-[98px] md:px-12 px-8'>
                 <div className="text-center">
                     <h2 className="poppins-semibold text-[28px] text-[#00399F] leading-[39.2px]">Meet Our Founder</h2>
