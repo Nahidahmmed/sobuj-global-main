@@ -1,10 +1,10 @@
-import './Footer'
+import './Footer.css'
 
 const Footer = () => {
     return (
         <div>
             <div>
-                <div className='w-full bg-[#E7E7E7] mb-[-1px]'>
+                <div className='w-full bg-transparent mb-[-1px]'>
                     <img src="./assets/footerShape.png" className='w-full bg-white' alt="" />
                 </div>
                 <div className='bg-[#081831] px-6 relative'>
