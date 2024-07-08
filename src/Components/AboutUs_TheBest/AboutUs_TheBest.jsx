@@ -1,9 +1,10 @@
 
 
 const AboutUs_Thebest = () => {
-    return (
-        <div className="max-w-[1157px] mx-auto pt-[64px] pb-[72px]">
-            <div className="text-center mx-8">
+    return ( 
+        <div className=" pt-[64px] pb-[72px] bg-[#EFF6FF]">
+           <div className=" max-w-[1157px] mx-auto">
+           <div className="text-center mx-8 ">
                 <h2 className="poppins-semibold text-[40px] leading-[56px] -tracking-[0.02em] text-[#081831]">Why We Are The Best</h2>
                 <p className="poppins-regular text-[16px] text-[#000000] lg:w-[760px] mx-auto">Shabuj Global provides an excellent service to students with their admission to top quality universities and colleges in the UK. Shabuj Global helps students from all over the world. Home Students, EU students and International students have all benefitted from our help and advice.</p>
             </div>
@@ -254,6 +255,7 @@ const AboutUs_Thebest = () => {
                     </div>
                 </div>
             </div>
+           </div>
         </div>
     );
 };

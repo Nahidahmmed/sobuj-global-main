@@ -1,10 +1,10 @@
-import bg from '../../assets/Background.jpg'
-import heroImg from '../../assets/college admission-amico.svg'
-import Lightning from '../../assets/Lightning Vector.svg'
-import vision from '../../assets/Vision Icon.svg'
-import mission from '../../assets/Mission Icon.svg'
-import '../App.css'
-const AboutUs = () => {
+import bg from '../assets/Background.jpg'
+import heroImg from '../assets/college admission-amico.svg'
+import Lightning from '../assets/Lightning Vector.svg'
+import vision from '../assets/Vision Icon.svg'
+import mission from '../assets/Mission Icon.svg'
+
+const AboutUs_components = () => {
     const Card = ({ number, text }) => {
         return (
             <div className='w-2/3 md:w-1/3 mx-auto lg:w-full bg-white rounded-lg  shadow-2xl  flex flex-col gap-4 justify-center pb-14 p-10 text-start'>
@@ -73,4 +73,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default AboutUs_components;

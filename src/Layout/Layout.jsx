@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
+import Navbar from "../Shared/Navbar/Navbar";
 import ContactUs_Accordion from "../Components/ContactUs_Accordion/ContactUs_Accordion";
 import AboutUs_MeetOurFounder from "../Components/AboutUs_MeetOurFounder/AboutUs_MeetOurFounder";
 import AboutUs_Thebest from "../Components/AboutUs_TheBest/AboutUs_TheBest";
@@ -21,12 +22,14 @@ import Home_Contact from "../Components/Home_Contact/Home_Contact";
 const Layout = () => {
     return (
         <div>
-            <ContactUs_Accordion></ContactUs_Accordion>
+            <Navbar/>
+            {/* <ContactUs_Accordion></ContactUs_Accordion>
             <AboutUs_MeetOurFounder></AboutUs_MeetOurFounder>
             <AboutUs_Thebest></AboutUs_Thebest>
             <UpcomingEvents_EducationFair></UpcomingEvents_EducationFair>
             <UpcomingEvents_PastEvents></UpcomingEvents_PastEvents>
-            <Blog_BlogInbox></Blog_BlogInbox>
+            <Blog_BlogInbox></Blog_BlogInbox> */}
+            {/* <Blog_BlogInbox></Blog_BlogInbox> */}
             
             <Outlet/>
             

@@ -7,6 +7,7 @@ import { SiGooglesheets } from "react-icons/si";
 import { RiNewsFill } from "react-icons/ri";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaMicrophoneLines, FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [navButton, setNavButton] = useState(0)
     const [navIndex, setNavIndex] = useState(0)
@@ -37,7 +38,7 @@ const Navbar = () => {
                     <NavButton ind={1} text='Study Destination' />
                     <NavButton ind={2} text='Services' />
                     <NavButton ind={3} text='Test Prep.' />
-                    <NavButton ind={4} text='About Us' />
+                    <Link to={'/about'}><NavButton ind={4} text='About Us' /></Link>
                     <button className='bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl'>Log In</button>
                 </div>
             </div>
