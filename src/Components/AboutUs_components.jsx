@@ -1,9 +1,9 @@
-import bg from '../../assets/Background.jpg'
-import heroImg from '../../assets/college admission-amico.svg'
-import Lightning from '../../assets/Lightning Vector.svg'
-import vision from '../../assets/Vision Icon.svg'
-import mission from '../../assets/Mission Icon.svg'
-import '../../App.css'
+import bg from '../assets/Background.jpg'
+import heroImg from '../assets/college admission-amico.svg'
+import Lightning from '../assets/Lightning Vector.svg'
+import vision from '../assets/Vision Icon.svg'
+import mission from '../assets/Mission Icon.svg'
+
 const AboutUs_components = () => {
     const Card = ({ number, text }) => {
         return (

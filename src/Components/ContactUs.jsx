@@ -6,9 +6,6 @@ import { motion } from "framer-motion"
 
 
 
-
-
-
 const ContactUs = () => {
     const [tik, setTik] = useState(false)
     const [width, setWidth] = useState(null)
