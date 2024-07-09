@@ -14,7 +14,7 @@ import { GoDotFill } from "react-icons/go";
 import '../../App.css'
 import CountDown from './CountDown';
 import SelectedEvent from './SelectedEvent';
-const Events = () => {
+const Events_Components = () => {
     const [active, setActive] = useState(1)
     const [width, setWidth] = useState(null)
     const [eventNo, setEventNo] = useState(0)
@@ -121,4 +121,4 @@ const Events = () => {
     );
 };
 
-export default Events;
+export default Events_Components;

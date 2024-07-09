@@ -3,7 +3,7 @@ import bg from '../../assets/Rectangle 188.png'
 import { useEffect, useState } from 'react';
 import { motion } from "framer-motion"
 
-const Blogs = () => {
+const Blogs_Banner = () => {
 
     const [width, setWidth] = useState(null)
 
@@ -39,4 +39,4 @@ const Blogs = () => {
     );
 };
 
-export default Blogs;
+export default Blogs_Banner;
