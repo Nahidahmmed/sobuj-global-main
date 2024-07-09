@@ -19,6 +19,8 @@ import Home_Contact from "../Components/Home_Contact/Home_Contact";
 
 
 
+
+
 const Layout = () => {
     return (
         <div>
@@ -28,8 +30,8 @@ const Layout = () => {
             <AboutUs_Thebest></AboutUs_Thebest>
             <UpcomingEvents_EducationFair></UpcomingEvents_EducationFair>
             <UpcomingEvents_PastEvents></UpcomingEvents_PastEvents>
+            <Blog_BlogInbox></Blog_BlogInbox> 
             <Blog_BlogInbox></Blog_BlogInbox> */}
-            {/* <Blog_BlogInbox></Blog_BlogInbox> */}
             
             <Outlet/>
             
