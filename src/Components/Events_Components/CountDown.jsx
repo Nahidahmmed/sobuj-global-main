@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const CountDown = ({ date }) => {
     const counterStyle = 'bg-black font-bold text-white text-2xl  px-5 py-3'
