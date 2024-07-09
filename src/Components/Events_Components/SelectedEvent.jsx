@@ -18,8 +18,8 @@ const SelectedEvent = ({ eventNo }) => {
     useEffect(() => {
         setWidth(window.innerWidth)
     }, [])
-    const inputClass = `   rounded-md w-full  outline-none placeholder:text-xs  placeholder:text-[8px]   ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[8px]' : width > 1300 ? 'text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base pl-[2px] placeholder:text-[8px] md:p-2 '}`
-    const inputClass2 = `bg-gray-100 text-center flex items-center     text-gray-400 text-[8px] md:text-[12px] ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[10px]' : width > 1300 ? 'p-2 text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base  md:p-2 '}`
+    const inputClass = ` rounded-sm  md:rounded-md w-full  outline-none placeholder:text-xs  placeholder:text-[8px]   ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[10px]' : width > 1300 ? 'text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base pl-[2px] md:p-2 '}`
+    const inputClass2 = `bg-gray-100 text-center flex items-center  px-1 md:p-2 text-gray-400 text-[8px] md:text-[12px] ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[10px]' : width > 1300 ? 'text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base md:p-2 '}`
 
     const eventData = [
         {
@@ -78,16 +78,16 @@ const SelectedEvent = ({ eventNo }) => {
                         <div className="lg:absolute top-0 overflow-hidden ">
                             <div className="flex flex-col justify-center items-center relative ">
                                 <motion.div initial={{ y: '-200px' }} animate={{ y: 0 }} transition={{ duration: 1 }} className={`${width >= 1024 & width <= 1300 ? 'mt-5 ' : width <= 1500 ? 'lg:w-2/6' : 'lg:w-1/4'} w-1/3  md:w-2/5  z-10   absolute `}>
-                                    <form className=' w-full z-10 -mt-10 flex flex-col gap-2 text-xs lg:text-base'>
+                                    <form className=' w-full z-10 -mt-10 flex flex-col gap-1 md:gap-2 text-xs lg:text-base'>
                                         <input className={inputClass} type="text" placeholder='Name' />
 
                                         <div className='flex'>
                                             <input className={`${inputClass} rounded-r-none `} type="text" placeholder='Email' />
-                                            <p className={`${inputClass2} rounded-r-md  text-[8px] `}>.com</p>
+                                            <p className={`${inputClass2} rounded-r-sm md:rounded-r-md  text-[8px] `}>.com</p>
                                         </div>
 
                                         <div className='flex gap-2'>
-                                            <p className={`${inputClass2} rounded-md  `}>+880</p>
+                                            <p className={`${inputClass2} rounded-sm md:rounded-r-md  `}>+880</p>
                                             <input className={`${inputClass}  `} type="text" placeholder='Mobile Number' />
                                         </div>
 
@@ -112,7 +112,6 @@ const SelectedEvent = ({ eventNo }) => {
                 </div>
 
             </div>
-            <img className="p-5 lg:mx-auto my-10" src={event.image} alt="" />
         </div>
     );
 };

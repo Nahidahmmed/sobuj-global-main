@@ -32,12 +32,12 @@ const ContactUs_Components = () => {
                             <input className={inputClass} type="text" placeholder='Name' />
 
                             <div className='flex'>
-                                <input className={`${inputClass} rounded-r-none `} type="text" placeholder='Email' />
+                                <input className={`${inputClass} rounded-r-none md:rounded-r-none `} type="text" placeholder='Email' />
                                 <p className={`${inputClass2} rounded-r-sm md:rounded-r-md  text-[8px] `}>.com</p>
                             </div>
 
                             <div className='flex gap-2'>
-                                <p className={`${inputClass2} rounded-sm md:rounded-r-md  `}>+880</p>
+                                <p className={`${inputClass2} rounded-sm md:rounded-md  `}>+880</p>
                                 <input className={`${inputClass}  `} type="text" placeholder='Mobile Number' />
                             </div>
 
