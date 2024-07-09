@@ -20,10 +20,9 @@ const Navbar = () => {
     navButton == 0 ? setNavButton(index) : setNavButton(0);
   };
 
-  const NavButton = ({ ind, text }) => {
+  const NavButton = ({ ind }) => {
     return (
-      <div className={` flex items-center  gap-2 cursor-pointer `}>
-        <button className="bg-[#F0F8FF] font-semibold">{text}</button>
+      <div className={` cursor-pointer `}>
         <div onClick={() => handleNavButton(ind)}>
           {navButton == ind ? (
             <>
@@ -52,12 +51,28 @@ const Navbar = () => {
         />
 
         <div className="grid grid-cols-2 items-center justify-between my-5 md:flex gap-6  ">
-          <NavButton ind={1} text="Study Destination" />
-          <NavButton ind={2} text="Services" />
-          <NavButton ind={3} text="Test Prep." />
-          <Link to={"/about"}>
+          <div className="flex items-center gap-1">
+            <button className="flex items-center gap-1"><p className="bg-[#F0F8FF] font-semibold">Study Destination</p></button>
+            <NavButton ind={1} />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <button className="flex items-center gap-1"><p className="bg-[#F0F8FF] font-semibold">Services</p></button>
+            <NavButton ind={2} />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <button className="flex items-center gap-1"><p className="bg-[#F0F8FF] font-semibold">Test Prep.</p></button>
+            <NavButton ind={3} />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <Link to={"/about"}>
+              <button><p className="bg-[#F0F8FF] font-semibold">About</p></button>
+            </Link>
             <NavButton ind={4} text="About Us" />
-          </Link>
+          </div>
+
           <button className="bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl">
             Log In
           </button>
