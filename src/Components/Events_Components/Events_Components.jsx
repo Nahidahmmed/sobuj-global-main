@@ -13,6 +13,7 @@ import { GoDotFill } from "react-icons/go";
 
 import '../../App.css'
 import CountDown from './CountDown';
+import { Link } from 'react-router-dom';
 const Events_Components = () => {
     const [active, setActive] = useState(1)
     const [width, setWidth] = useState(null)
@@ -67,7 +68,7 @@ const Events_Components = () => {
                                     <p>Attend Shabuj Global Education International Education Fair - Chattogram and apply for September 2024 and January 2024 intakes.</p>
                                     <ul className='text-[#F25025]'>
                                         <li className='flex items-center  gap-2'><HiOutlineLocationMarker />The Peninsula Chittagong</li>
-                                        <li className='flex items-center justify-between '><span className='flex'><span className='flex items-center gap-2'><FaRegCalendarDays />22nd July, 2024 </span><span className='flex items-center gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span> <span className='rounded-2xl text-white bg-[#2563EB] p-2 font-light text-xs px-4 cursor-pointer' >Register Now</span></li>
+                                        <li className='flex items-center justify-between '><span className='flex'><span className='flex items-center gap-2'><FaRegCalendarDays />22nd July, 2024 </span><span className='flex items-center gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span><Link to={'/SingleEvent'}> <span className='rounded-2xl text-white bg-[#2563EB] p-2 font-light text-xs px-4 cursor-pointer' >Register Now</span></Link></li>
                                     </ul>
                                 </div>
 
@@ -83,7 +84,7 @@ const Events_Components = () => {
                                                 <p className='text-sm'>Attend our Multi-Destination Education Expo - Sylhet and apply for September 2024 and January 2024 intakes.</p>
                                                 <ul className='text-[#F25025]  space-y-1 text-xs'>
                                                     <li className='flex items-center  gap-2'><HiOutlineLocationMarker />The Peninsula Chittagong</li>
-                                                    <li className='flex items-center justify-between '><span><span className='flex gap-2'><FaRegCalendarDays />24 th July, 2024 </span><span className='flex gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span> <span className='rounded-2xl text-white bg-[#2563EB] p-2 font-light text-xs px-4 cursor-pointer' >Register Now</span></li>
+                                                    <li className='flex items-center justify-between '><span><span className='flex gap-2'><FaRegCalendarDays />24 th July, 2024 </span><span className='flex gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span> <Link to={'/SingleEvent'}> <span className='rounded-2xl text-white bg-[#2563EB] p-2 font-light text-xs px-4 cursor-pointer' >Register Now</span></Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -98,7 +99,7 @@ const Events_Components = () => {
                                                 <p className='text-sm'>Attend our Multi-Destination Education Expo - Sylhet and apply for September 2024 and January 2024 intakes.</p>
                                                 <ul className='text-[#F25025] space-y-1 text-xs'>
                                                     <li className='flex items-center  gap-2'><HiOutlineLocationMarker />The Peninsula Chittagong</li>
-                                                    <li className='flex items-center justify-between '><span><span className='flex gap-2'><FaRegCalendarDays />26 th July, 2024 </span><span className='flex gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span> <span className='rounded-2xl text-white bg-[#2563EB] p-2 font-light text-xs px-4 cursor-pointer' >Register Now</span></li>
+                                                    <li className='flex items-center justify-between '><span><span className='flex gap-2'><FaRegCalendarDays />26 th July, 2024 </span><span className='flex gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span> <Link to={'/SingleEvent'}> <span className='rounded-2xl text-white bg-[#2563EB] p-2 font-light text-xs px-4 cursor-pointer' >Register Now</span></Link></li>
                                                 </ul>
                                             </div>
                                         </div>
