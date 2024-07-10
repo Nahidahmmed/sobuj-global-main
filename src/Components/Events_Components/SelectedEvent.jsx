@@ -8,51 +8,18 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { GoDotFill } from "react-icons/go";
 import bg from '../../assets/Blue Background.png'
 
-import Chattogram from '../../assets/CTG-Multi-Destination-Expo-18-May-Banner 2.png'
-import Sylhet from '../../assets/Sylhet-Expo-12-February-2024 1.png'
-import Dhaka from '../../assets/Dhaka-Event--ad-2 1.png'
-const SelectedEvent = ({ eventNo }) => {
+ 
+const SelectedEvent = () => {
     const [tik, setTik] = useState(false)
     const [width, setWidth] = useState(null)
     console.log(width)
     useEffect(() => {
         setWidth(window.innerWidth)
     }, [])
-    const inputClass = `   rounded-md w-full  outline-none placeholder:text-xs  placeholder:text-[8px]   ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[8px]' : width > 1300 ? 'text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base pl-[2px] placeholder:text-[8px] md:p-2 '}`
-    const inputClass2 = `bg-gray-100 text-center flex items-center     text-gray-400 text-[8px] md:text-[12px] ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[10px]' : width > 1300 ? 'p-2 text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base  md:p-2 '}`
+    const inputClass = ` rounded-sm  md:rounded-md w-full  outline-none placeholder:text-xs  placeholder:text-[8px]   ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[10px]' : width > 1300 ? 'text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base pl-[2px] md:p-2 '}`
+    const inputClass2 = `bg-gray-100 text-center flex items-center  px-1 md:p-2 text-gray-400 text-[8px] md:text-[12px] ${width >= 1024 & width <= 1300 ? 'placeholder:text-[10px]   px-2 text-[10px]' : width > 1300 ? 'text-base placeholder:text-base px-2 py-1' : 'text-[8px] md:text-base md:p-2 '}`
 
-    const eventData = [
-        {
-            'title': 'International Education Fair - Chattogram',
-            'details': 'Attend Shabuj Global Education International Education Fair - Chattogram and apply for September 2024 and January 2024 intakes.',
-            'location': 'The Peninsula Chittagong',
-            'date': '22nd July, 2024',
-            'time': '10:00 am - 05:00 pm',
-            'timeData': '2024-07-22 10:00',
-            'image': Chattogram
 
-        },
-        {
-            'title': 'Multi-Destination Education Expo - Sylhet',
-            'details': 'Attend our Multi-Destination Education Expo - Sylhet and apply for September 2024 and January 2024 intakes.',
-            'location': 'Hotel Noorjahan Grand',
-            'date': '24nd July, 2024',
-            'time': '10:00 am - 05:00 pm',
-            'timeData': '2024-07-24 10:00',
-            'image': Sylhet
-        },
-        {
-            'title': 'Education Expo - UK, USA, Canada, Australia',
-            'details': 'Attend our Multi-Destination Education Expo - Sylhet and apply for September 2023 and January 2024 intakes.',
-            'location': 'Hotel Noorjahan Grand',
-            'date': '26nd July, 2024',
-            'time': '10:00 am - 05:00 pm',
-            'timeData': '2024-07-26 10:00',
-            'image': Dhaka
-        }
-    ]
-
-    const event = eventData[eventNo - 1];
 
     return (
         <div>
@@ -61,9 +28,9 @@ const SelectedEvent = ({ eventNo }) => {
                     <div className={`${width >= 1024 && width <= 1300 ? 'lg:pl-20 pl-10' : 'lg:pl-32 pl-10'} col-span-2 flex flex-col relative   pt-20 `}>
                         <div className="  ">
                             <button className="text-white bg-[#ff3b30] p-2 rounded-lg text-xs mb-5">Free Entry</button>
-                            <h1 className="text-4xl font-semibold text-[#00399F]">{event.title}</h1>
-                            <p className="my-5 font-semibold text-2xl">{event.title}</p>
-                            <p>{event.details}</p>
+                            <h1 className="text-4xl font-semibold text-[#00399F]">International Education Fair - Chattogram</h1>
+                            <p className="my-5 font-semibold text-2xl">International Education Fair - Chattogram</p>
+                            <p>Attend Shabuj Global Education International Education Fair - Chattogram and apply for September 2024 and January 2024 intakes.</p>
                             <ul className='text-[#F25025] space-y-5 my-5'>
                                 <li className='flex items-center  gap-2'><HiOutlineLocationMarker />The Peninsula Chittagong</li>
                                 <li className='flex items-center justify-between '><span className='flex'><span className='flex items-center gap-2'><FaRegCalendarDays />22nd July, 2024 </span><span className='flex items-center gap-2'><GoDotFill />10:00 am - 05:00 pm</span></span> </li>
@@ -73,21 +40,21 @@ const SelectedEvent = ({ eventNo }) => {
 
                     <div className="col-span-3 relative lg:mt-20">
                         <div className="w-fit mx-auto">
-                            <CountDown date={event?.timeData} />
+                            <CountDown date= '2024-07-22 10:00' />
                         </div>
                         <div className="lg:absolute top-0 overflow-hidden ">
                             <div className="flex flex-col justify-center items-center relative ">
                                 <motion.div initial={{ y: '-200px' }} animate={{ y: 0 }} transition={{ duration: 1 }} className={`${width >= 1024 & width <= 1300 ? 'mt-5 ' : width <= 1500 ? 'lg:w-2/6' : 'lg:w-1/4'} w-1/3  md:w-2/5  z-10   absolute `}>
-                                    <form className=' w-full z-10 -mt-10 flex flex-col gap-2 text-xs lg:text-base'>
+                                    <form className=' w-full z-10 -mt-10 flex flex-col gap-1 md:gap-2 text-xs lg:text-base'>
                                         <input className={inputClass} type="text" placeholder='Name' />
 
                                         <div className='flex'>
-                                            <input className={`${inputClass} rounded-r-none `} type="text" placeholder='Email' />
-                                            <p className={`${inputClass2} rounded-r-md  text-[8px] `}>.com</p>
+                                            <input className={`${inputClass} rounded-r-none lg:rounded-r-none `} type="text" placeholder='Email' />
+                                            <p className={`${inputClass2} rounded-r-sm md:rounded-r-md  text-[8px] `}>.com</p>
                                         </div>
 
                                         <div className='flex gap-2'>
-                                            <p className={`${inputClass2} rounded-md  `}>+880</p>
+                                            <p className={`${inputClass2} rounded-sm md:rounded-md  `}>+880</p>
                                             <input className={`${inputClass}  `} type="text" placeholder='Mobile Number' />
                                         </div>
 
@@ -112,7 +79,6 @@ const SelectedEvent = ({ eventNo }) => {
                 </div>
 
             </div>
-            <img className="p-5 lg:mx-auto my-10" src={event.image} alt="" />
         </div>
     );
 };

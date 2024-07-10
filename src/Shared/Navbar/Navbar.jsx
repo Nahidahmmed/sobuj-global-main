@@ -9,6 +9,7 @@ import { FaClock, FaUserFriends, FaHeart } from "react-icons/fa";
 import { SiGooglesheets } from "react-icons/si";
 import { RiNewsFill } from "react-icons/ri";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { FaMicrophoneLines, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 const Navbar = () => {
@@ -20,10 +21,9 @@ const Navbar = () => {
     navButton == 0 ? setNavButton(index) : setNavButton(0);
   };
 
-  const NavButton = ({ ind, text }) => {
+  const NavButton = ({ ind }) => {
     return (
-      <div className={` flex items-center  gap-2 cursor-pointer `}>
-        <button className="bg-[#F0F8FF] font-semibold">{text}</button>
+      <div className={` cursor-pointer `}>
         <div onClick={() => handleNavButton(ind)}>
           {navButton == ind ? (
             <>
@@ -44,20 +44,92 @@ const Navbar = () => {
   }, [navButton, setNavIndex]);
   return (
     <div className="relative bg-[#F0F8FF]">
-      <div className="px-10 lg:px-28  flex flex-col lg:flex-row items-end justify-between py-5">
-        <img
-          className="h-[30px] w-[200px] mx-auto lg:mx-0 md:h-[40px] md:w-[250px] lg:h-[50px] lg:w-[350px]"
-          src={logo}
-          alt=""
-        />
+      <div className="px-3 lg:px-28  flex flex-row items-center lg:items-end justify-between py-10 pb-20 lg:py-5">
+        <div className=" flex lg:hidden">
+          <details className="dropdown dropdown-right">
+            <summary className="btn bg-transparent shadow-none text-2xl p-2">
+              <GiHamburgerMenu />
+            </summary>
+            <ul className=" grid grid-cols-2 gap-2 items-center justify-between menu dropdown-content bg-white rounded-box z-50 w-80  p-2 shadow">
+              <div className="flex justify-center items-center gap-1">
+                <button className="flex items-center gap-1">
+                  <p className="text-sm font-semibold">Study Destination</p>
+                </button>
+                <NavButton ind={1} />
+              </div>
 
-        <div className="grid grid-cols-2 items-center justify-between my-5 md:flex gap-6  ">
-          <NavButton ind={1} text="Study Destination" />
-          <NavButton ind={2} text="Services" />
-          <NavButton ind={3} text="Test Prep." />
-          <Link to={"/about"}>
+              <div className="flex justify-center items-center gap-1">
+                <Link to={"/services"}>
+                  <button className="flex items-center gap-1">
+                    <p className="font-semibold">Services</p>
+                  </button>
+                </Link>
+                <NavButton ind={2} />
+              </div>
+
+              <div className="flex justify-center items-center gap-1">
+                <button className="flex items-center gap-1">
+                  <p className="font-semibold">Test Prep.</p>
+                </button>
+                <NavButton ind={3} />
+              </div>
+
+              <div className="flex justify-center items-center gap-1">
+                <Link to={"/about"}>
+                  <button>
+                    <p className="  font-semibold">About</p>
+                  </button>
+                </Link>
+                <NavButton ind={4} text="About Us" />
+              </div>
+
+              <button className="bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl">
+                Log In
+              </button>
+            </ul>
+          </details>
+        </div>
+        <Link to={"/"}>
+          <img
+            className="h-[30px] w-[200px]   lg:mx-0 md:h-[40px] md:w-[250px] lg:h-[50px] lg:w-[350px]"
+            src={logo}
+            alt=""
+          />
+        </Link>
+
+        <div className="hidden items-center justify-between my-5 lg:flex gap-6  ">
+          <div className="flex items-center gap-1">
+            <button className="flex items-center gap-1">
+              <p className="bg-[#F0F8FF] font-semibold">Study Destination</p>
+            </button>
+            <NavButton ind={1} />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <Link to={"/services"}>
+              <button className="flex items-center gap-1">
+                <p className="bg-[#F0F8FF] font-semibold">Services</p>
+              </button>
+            </Link>
+            <NavButton ind={2} />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <button className="flex items-center gap-1">
+              <p className="bg-[#F0F8FF] font-semibold">Test Prep.</p>
+            </button>
+            <NavButton ind={3} />
+          </div>
+
+          <div className="flex items-center gap-1">
+            <Link to={"/about"}>
+              <button>
+                <p className="bg-[#F0F8FF] font-semibold">About</p>
+              </button>
+            </Link>
             <NavButton ind={4} text="About Us" />
-          </Link>
+          </div>
+
           <button className="bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl">
             Log In
           </button>
@@ -65,7 +137,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar Item */}
-      <div className=" bg-white absolute w-full   z-40 shadow-lg">
+      <div className=" bg-white absolute w-full    z-40 shadow-lg">
         {navIndex == 1 && (
           <div>
             <ul className="flex justify-between max-w-7xl mx-auto">
@@ -157,25 +229,30 @@ const Navbar = () => {
                   Hiring
                 </span>
               </div>
-              <li className={iconStyle}>
-                <RiNewsFill />
-                Blog
+              <li>
+                <Link className={iconStyle} to="/blogs">
+                  <RiNewsFill />
+                  Blog
+                </Link>
               </li>
             </ul>
             <ul className="col-span-1 space-y-4 text-lg ">
-              <Link to="/contact">
-                <li className={iconStyle}>
+              <li>
+                <Link className={iconStyle} to="/contact">
                   <BiSolidPhoneCall />
                   Contact Us
-                </li>
-              </Link>
+                </Link>
+              </li>
               <li className={iconStyle}>
                 <FaMicrophoneLines />
                 News & Press
               </li>
+
               <li className={iconStyle}>
-                <BsCameraVideoFill />
-                Events & Webinars
+                <Link className={iconStyle} to="/events">
+                  <BsCameraVideoFill />
+                  Events & Webinars
+                </Link>
               </li>
             </ul>
             <ul></ul>

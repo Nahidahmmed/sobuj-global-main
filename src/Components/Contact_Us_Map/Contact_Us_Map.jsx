@@ -2193,7 +2193,7 @@ const Contact_Us_Map = () => {
 
           {showModal ? (
             <>
-              <div className="modal">
+              <div className="contact_modal">
                 <div className="modal-content">
                   <button className="close-button" onClick={closeModal}>
                     <IoIosCloseCircleOutline />
