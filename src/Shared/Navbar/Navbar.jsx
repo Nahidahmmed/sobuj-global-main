@@ -52,9 +52,10 @@ const Navbar = () => {
             </summary>
             <ul className=" grid grid-cols-2 gap-2 items-center justify-between menu dropdown-content bg-white rounded-box z-50 w-80  p-2 shadow">
               <div className="flex justify-center items-center gap-1">
+                <Link to={'/StudyDestination'}>
                 <button className="flex items-center gap-1">
                   <p className="text-sm font-semibold">Study Destination</p>
-                </button>
+                </button></Link>
                 <NavButton ind={1} />
               </div>
 
@@ -99,9 +100,10 @@ const Navbar = () => {
 
         <div className="hidden items-center justify-between my-5 lg:flex gap-6  ">
           <div className="flex items-center gap-1">
+            <Link to={'/StudyDestination'}>
             <button className="flex items-center gap-1">
               <p className="bg-[#F0F8FF] font-semibold">Study Destination</p>
-            </button>
+            </button></Link>
             <NavButton ind={1} />
           </div>
 
