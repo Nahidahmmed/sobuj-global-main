@@ -1,3 +1,4 @@
+
 import gifImage from "../../assets/Flow 1@512p-50fps.gif";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { SlLocationPin } from "react-icons/sl";
@@ -2193,7 +2194,7 @@ const Contact_Us_Map = () => {
 
           {showModal ? (
             <>
-              <div className="modal">
+              <div className="contact_modal">
                 <div className="modal-content">
                   <button className="close-button" onClick={closeModal}>
                     <IoIosCloseCircleOutline />
