@@ -1,3 +1,4 @@
+
 import gifImage from "../../assets/Flow 1@512p-50fps.gif";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { SlLocationPin } from "react-icons/sl";

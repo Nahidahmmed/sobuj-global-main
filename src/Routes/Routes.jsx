@@ -8,6 +8,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import Services_Page from "../Pages/Services_page/Services_Page";
 import Single_Blog from "../Pages/Single_Blog/Single_Blog";
 import Single_Event from "../Pages/Single_Event/Single_Event";
+import Study_Destination from "../Pages/Study_Destination/Study_Destination";
 
 
 
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: "/SingleEvent",
         element: <Single_Event />
+      },
+      {
+        path: "/StudyDestination",
+        element: <Study_Destination />
       },
       
     ],
