@@ -8,7 +8,7 @@ import UpcomingEvents_EducationFair from "../Components/UpcomingEvents_Education
 import UpcomingEvents_PastEvents from "../Components/UpcomingEvents_PastEvents/UpcomingEvents_PastEvents";
 import Blog_BlogInbox from "../Components/Blog_BlogInbox/Blog_BlogInbox";
 import Home_Contact from "../Components/Home_Contact/Home_Contact";
-import Service_Testimonial from "../Components/Service_Testimonial/Service_Testimonial";
+
 
 
 
@@ -33,7 +33,7 @@ const Layout = () => {
             <UpcomingEvents_PastEvents></UpcomingEvents_PastEvents>
             <Blog_BlogInbox></Blog_BlogInbox> 
             <Blog_BlogInbox></Blog_BlogInbox> */}
-            <Service_Testimonial></Service_Testimonial>
+            
             <Outlet/>
             
             <Footer/>
