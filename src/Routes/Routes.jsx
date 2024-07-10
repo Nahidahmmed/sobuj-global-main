@@ -5,6 +5,12 @@ import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Events from "../Pages/Events/Events";
 import Blogs from "../Pages/Blogs/Blogs";
+import Services_Page from "../Pages/Services_page/Services_Page";
+import Single_Blog from "../Pages/Single_Blog/Single_Blog";
+import Single_Event from "../Pages/Single_Event/Single_Event";
+
+
+
 
 export const router = createBrowserRouter([
   {
@@ -28,9 +34,22 @@ export const router = createBrowserRouter([
         element: <Events />,
       },
       {
-        path: "/blogs",
-        element: <Blogs />,
+        path: "/services",
+        element: <Services_Page />,
       },
+      {
+        path: "/blogs",
+        element: <Blogs />
+      },
+      {
+        path: "/SingleBlogs",
+        element: <Single_Blog />
+      },
+      {
+        path: "/SingleEvent",
+        element: <Single_Event />
+      },
+      
     ],
   },
 ]);

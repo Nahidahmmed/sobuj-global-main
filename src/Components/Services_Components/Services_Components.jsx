@@ -4,7 +4,7 @@ import passport from '../../assets/Health passport-pana.svg'
 import airport from '../../assets/Airport-amico.svg'
 import circle from '../../assets/Circle.png'
 import '../../App.css'
-const Services = () => {
+const Services_Components = () => {
 
     const Card = ({ circle, position }) => {
         return (
@@ -42,7 +42,7 @@ const Services = () => {
     }
 
     return (
-        <div className='poppins  '>
+        <div className='poppins'>
             <div className=" lg:flex items-center  max-w-5xl mx-auto">
                 <img className='w-2/3 lg:w-1/2 mx-auto lg:mx-0' src={project} alt="" />
                 <div className='w-2/3 md:w-2/5 mb-10 mx-auto lg:mx-0 lg:ml-auto'>
@@ -145,4 +145,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Services_Components;

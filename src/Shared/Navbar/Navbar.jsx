@@ -47,26 +47,38 @@ const Navbar = () => {
       <div className="px-3 lg:px-28  flex flex-row items-center lg:items-end justify-between py-10 pb-20 lg:py-5">
         <div className=" flex lg:hidden">
           <details className="dropdown dropdown-right">
-            <summary className="btn bg-transparent shadow-none text-2xl p-2"><GiHamburgerMenu /></summary>
+            <summary className="btn bg-transparent shadow-none text-2xl p-2">
+              <GiHamburgerMenu />
+            </summary>
             <ul className=" grid grid-cols-2 gap-2 items-center justify-between menu dropdown-content bg-white rounded-box z-50 w-80  p-2 shadow">
               <div className="flex justify-center items-center gap-1">
-                <button className="flex items-center gap-1"><p className="text-sm font-semibold">Study Destination</p></button>
+                <button className="flex items-center gap-1">
+                  <p className="text-sm font-semibold">Study Destination</p>
+                </button>
                 <NavButton ind={1} />
               </div>
 
               <div className="flex justify-center items-center gap-1">
-                <button className="flex items-center gap-1"><p className="  font-semibold">Services</p></button>
+                <Link to={"/services"}>
+                  <button className="flex items-center gap-1">
+                    <p className="font-semibold">Services</p>
+                  </button>
+                </Link>
                 <NavButton ind={2} />
               </div>
 
               <div className="flex justify-center items-center gap-1">
-                <button className="flex items-center gap-1"><p className="  font-semibold">Test Prep.</p></button>
+                <button className="flex items-center gap-1">
+                  <p className="font-semibold">Test Prep.</p>
+                </button>
                 <NavButton ind={3} />
               </div>
 
               <div className="flex justify-center items-center gap-1">
                 <Link to={"/about"}>
-                  <button><p className="  font-semibold">About</p></button>
+                  <button>
+                    <p className="  font-semibold">About</p>
+                  </button>
                 </Link>
                 <NavButton ind={4} text="About Us" />
               </div>
@@ -77,31 +89,43 @@ const Navbar = () => {
             </ul>
           </details>
         </div>
-        <img
-          className="h-[30px] w-[200px]   lg:mx-0 md:h-[40px] md:w-[250px] lg:h-[50px] lg:w-[350px]"
-          src={logo}
-          alt=""
-        />
+        <Link to={"/"}>
+          <img
+            className="h-[30px] w-[200px]   lg:mx-0 md:h-[40px] md:w-[250px] lg:h-[50px] lg:w-[350px]"
+            src={logo}
+            alt=""
+          />
+        </Link>
 
         <div className="hidden items-center justify-between my-5 lg:flex gap-6  ">
           <div className="flex items-center gap-1">
-            <button className="flex items-center gap-1"><p className="bg-[#F0F8FF] font-semibold">Study Destination</p></button>
+            <button className="flex items-center gap-1">
+              <p className="bg-[#F0F8FF] font-semibold">Study Destination</p>
+            </button>
             <NavButton ind={1} />
           </div>
 
           <div className="flex items-center gap-1">
-            <button className="flex items-center gap-1"><p className="bg-[#F0F8FF] font-semibold">Services</p></button>
+            <Link to={"/services"}>
+              <button className="flex items-center gap-1">
+                <p className="bg-[#F0F8FF] font-semibold">Services</p>
+              </button>
+            </Link>
             <NavButton ind={2} />
           </div>
 
           <div className="flex items-center gap-1">
-            <button className="flex items-center gap-1"><p className="bg-[#F0F8FF] font-semibold">Test Prep.</p></button>
+            <button className="flex items-center gap-1">
+              <p className="bg-[#F0F8FF] font-semibold">Test Prep.</p>
+            </button>
             <NavButton ind={3} />
           </div>
 
           <div className="flex items-center gap-1">
             <Link to={"/about"}>
-              <button><p className="bg-[#F0F8FF] font-semibold">About</p></button>
+              <button>
+                <p className="bg-[#F0F8FF] font-semibold">About</p>
+              </button>
             </Link>
             <NavButton ind={4} text="About Us" />
           </div>
@@ -205,25 +229,30 @@ const Navbar = () => {
                   Hiring
                 </span>
               </div>
-              <li className={iconStyle}>
-                <RiNewsFill />
-                Blog
+              <li>
+                <Link className={iconStyle} to="/blogs">
+                  <RiNewsFill />
+                  Blog
+                </Link>
               </li>
             </ul>
             <ul className="col-span-1 space-y-4 text-lg ">
-              <Link to="/contact">
-                <li className={iconStyle}>
+              <li>
+                <Link className={iconStyle} to="/contact">
                   <BiSolidPhoneCall />
                   Contact Us
-                </li>
-              </Link>
+                </Link>
+              </li>
               <li className={iconStyle}>
                 <FaMicrophoneLines />
                 News & Press
               </li>
+
               <li className={iconStyle}>
-                <BsCameraVideoFill />
-                Events & Webinars
+                <Link className={iconStyle} to="/events">
+                  <BsCameraVideoFill />
+                  Events & Webinars
+                </Link>
               </li>
             </ul>
             <ul></ul>

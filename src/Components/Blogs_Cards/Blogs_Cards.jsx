@@ -2,10 +2,11 @@
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 import "./Blogs_Cards.css";
+import { Link } from "react-router-dom";
 const Blogs_Cards = () => {
 
   return (
-    <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 my-5 bg-[#FFF]">
+    <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 my-5 bg-[#FFF] mt-32">
     <div className="hidden md:block">
       <div className="flex items-center gap-1">
         <svg
@@ -94,9 +95,10 @@ const Blogs_Cards = () => {
                 <p className="group-hover:text-white">
                   {item.description.slice(0, 150)}...
                 </p>
+                <Link to={"/SingleBlogs"}>
                 <button className="px-4 py-2 text-white rounded-full bg-[#FE632F] hover:bg-blue-500">
                   Continue Reading
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>

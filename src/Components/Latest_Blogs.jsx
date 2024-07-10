@@ -3,9 +3,9 @@ const Latest_Blogs = () => {
   return (
     <div className="max-w-screen-xl mx-auto">
       <h4 className="text-[28px] font-semibold">Latest Blogs</h4>
-      <div className="grid grid-cols-3 gap-x-7 gap-y-12 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-x-7 gap-y-12 my-10">
         {data.slice(0, 3).map((item) => (
-          <div key={item.id} className="group">
+          <div key={item.id} className="group lg:m-0 md:m-0 m-5">
             <div className="shadow-xl rounded-[16px] scale-right-bottom">
               <img src={item.image} alt="" className="h-[220px] w-full " />
               <div className="p-3 pb-4 space-y-2 group-hover:bg-[#081831] rounded-b-[16px]">

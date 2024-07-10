@@ -9,7 +9,7 @@ svg path {
 .hover-path:hover {
   fill: #0973eb;
 }
-.modal {
+.contact_modal {
   position: absolute;
   top: 0;
   left: 0;
