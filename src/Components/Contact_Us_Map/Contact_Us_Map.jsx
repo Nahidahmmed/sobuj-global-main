@@ -5,14 +5,14 @@ import { SlLocationPin } from "react-icons/sl";
 import { FiSmartphone } from "react-icons/fi";
 import { IoMailOutline } from "react-icons/io5";
 import "./Contact_US.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Contact_Us_Map = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [showDiv, setShowDiv] = useState("block");
   const officeAddress = {
-    "United Kingdom": {
+   " United Kingdom": {
       title: "United Kingdom",
       offices: [
         {
@@ -61,6 +61,25 @@ const Contact_Us_Map = () => {
         },
       ],
     },
+    Bangladesh: {
+      title: "Bangladesh",
+      offices: [
+        {
+          city: "Dhaka",
+          address: "Nagar Lutfun Homes, House No 11, Road No 17,Block D, Banani, Dhaka.",
+          phone: "09065327323, 07048293093",
+          email:
+            "bd@shabujglobal.com, applications.bd@shabujglobal.com",
+        },
+        {
+          city: "Chattogram",
+          address: "R.I. Tower(level 3),23/A MM Ali Road, Golpahar moor, Chattogram.",
+          phone: "+2349033173017",
+          email: "bd@shabujglobal.com",
+        },
+      ],
+    },
+    
   };
 
   const handleMouseEnter = (event) => {
@@ -77,16 +96,22 @@ const Contact_Us_Map = () => {
     setShowModal(false);
     // setSelectedCountry(null);
   };
+
+  const [width, setWidth] = useState(null)
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
   return (
     <div className="bg-[#EFF6FF]">
-      <div className="bg-[#081831] rounded-[32px] pb-16">
+      <div className="bg-[#081831] overflow-scroll rounded-[32px] pb-16">
         <div className="relative max-w-screen-xl mx-auto">
           <h1 className="text-[56px] font-semibold text-white text-center py-12">
             Our Offices
           </h1>
           <svg
-            className="pb-20 w-full  mx-auto"
-            width="1160"
+            className="lg:pb-20 max-w-screen-xl mx-auto"
+            width={width}
             height="564"
             viewBox="0 0 1160 564"
             fill="none"
@@ -2187,7 +2212,7 @@ const Contact_Us_Map = () => {
               showDiv ? "block" : "hidden"
             }`}
           >
-            <p id="namep" className="text-[56px] font-semibold">
+            <p id="namep" className="text-xl md:text-4xl lg:text-[56px] font-semibold">
               {selectedCountry || ""}
             </p>
           </div>
@@ -2245,7 +2270,7 @@ const Contact_Us_Map = () => {
           <img
             src={gifImage}
             alt="GIF Image"
-            className="w-[22%] absolute bottom-0 left-14"
+            className="w-[22%] lg:absolute bottom-0 pl-10 lg:pl-0 left-14"
           />
         </div>
       </div>
