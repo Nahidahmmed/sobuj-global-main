@@ -85,7 +85,7 @@ const Contact_Us_Map = () => {
             Our Offices
           </h1>
           <svg
-            className="pb-20 max-w-screen-xl mx-auto"
+            className="pb-20 w-full  mx-auto"
             width="1160"
             height="564"
             viewBox="0 0 1160 564"
