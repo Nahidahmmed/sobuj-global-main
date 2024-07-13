@@ -9,6 +9,7 @@ import Services_Page from "../Pages/Services_page/Services_Page";
 import Single_Blog from "../Pages/Single_Blog/Single_Blog";
 import Single_Event from "../Pages/Single_Event/Single_Event";
 import Study_Destination from "../Pages/Study_Destination/Study_Destination";
+import Registration from "../Pages/Registration/Registration";
 
 
 
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "/StudyDestination",
         element: <Study_Destination />
+      },
+      {
+        path: "/register",
+        element: <Registration/>
       },
       
     ],
