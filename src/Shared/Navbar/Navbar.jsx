@@ -5,23 +5,45 @@ import {
   IoShieldCheckmarkSharp,
   IoCheckmarkDoneCircleSharp,
 } from "react-icons/io5";
-import { FaClock, FaUserFriends, FaHeart } from "react-icons/fa";
+import { FaClock, FaUserFriends, FaHeart, FaChevronDown } from "react-icons/fa";
 import { SiGooglesheets } from "react-icons/si";
 import { RiNewsFill } from "react-icons/ri";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaMicrophoneLines, FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { FaMicrophoneLines, FaChevronUp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [navButton, setNavButton] = useState(0);
   const [navIndex, setNavIndex] = useState(0);
   const iconStyle = "flex items-center gap-2";
 
+  const enterNavButton = (index) => {
+    setNavButton(index)
+  };
+  const leaveNavButton = () => {
+    setNavButton(0)
+  };
+
+  const NavButton = ({ ind, text }) => {
+    return (
+      <div className={` cursor-pointer  `}>
+        <div className="flex items-center gap-2" onMouseEnter={() => enterNavButton(ind)} >
+          <button className="flex items-center gap-1">
+            <p className="bg-white lg:bg-[#F0F8FF] font-semibold">{text}</p>
+          </button>
+          <span className={` ${navButton == ind && 'rotate-180 transition ease-in-out delay-450'}`}>
+            <FaChevronUp />
+          </span>
+        </div>
+      </div>
+    );
+  };
+
   const handleNavButton = (index) => {
     navButton == 0 ? setNavButton(index) : setNavButton(0);
   };
 
-  const NavButton = ({ ind }) => {
+  const SmallNavButton = ({ ind }) => {
     return (
       <div className={` cursor-pointer `}>
         <div onClick={() => handleNavButton(ind)}>
@@ -43,53 +65,9 @@ const Navbar = () => {
     setNavIndex(navButton);
   }, [navButton, setNavIndex]);
   return (
-    <div className="relative bg-[#F0F8FF]">
-      <div className="px-3 lg:px-28  flex flex-row items-center lg:items-end justify-between py-10 pb-20 lg:py-5">
-        <div className=" flex lg:hidden">
-          <details className="dropdown dropdown-right">
-            <summary className="btn bg-transparent shadow-none text-2xl p-2">
-              <GiHamburgerMenu />
-            </summary>
-            <ul className=" grid grid-cols-2 gap-2 items-center justify-between menu dropdown-content bg-white rounded-box z-50 w-80  p-2 shadow">
-              <div className="flex justify-center items-center gap-1">
-                <Link to={'/StudyDestination'}>
-                <button className="flex items-center gap-1">
-                  <p className="text-sm font-semibold">Study Destination</p>
-                </button></Link>
-                <NavButton ind={1} />
-              </div>
+    <div onMouseLeave={() => leaveNavButton()} className="relative bg-[#F0F8FF] lg:mb-0 mb-10">
+      <div className="px-3 lg:px-28  flex flex-row items-center lg:items-end justify-between py-10 pb-36 lg:py-5">
 
-              <div className="flex justify-center items-center gap-1">
-                <Link to={"/services"}>
-                  <button className="flex items-center gap-1">
-                    <p className="font-semibold">Services</p>
-                  </button>
-                </Link>
-                <NavButton ind={2} />
-              </div>
-
-              <div className="flex justify-center items-center gap-1">
-                <button className="flex items-center gap-1">
-                  <p className="font-semibold">Test Prep.</p>
-                </button>
-                <NavButton ind={3} />
-              </div>
-
-              <div className="flex justify-center items-center gap-1">
-                <Link to={"/about"}>
-                  <button>
-                    <p className="  font-semibold">About</p>
-                  </button>
-                </Link>
-                <NavButton ind={4} text="About Us" />
-              </div>
-
-              <button className="bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl">
-                Log In
-              </button>
-            </ul>
-          </details>
-        </div>
         <Link to={"/"}>
           <img
             className="h-[30px] w-[200px]   lg:mx-0 md:h-[40px] md:w-[250px] lg:h-[50px] lg:w-[350px]"
@@ -98,38 +76,75 @@ const Navbar = () => {
           />
         </Link>
 
+        {/* Small device navbar buttons */}
+        <div className=" flex lg:hidden">
+          <details className="dropdown dropdown-left">
+            <summary className="btn bg-transparent shadow-none text-2xl p-2">
+              <GiHamburgerMenu />
+            </summary>
+            <ul className="   gap-2  menu dropdown-content bg-white rounded-box z-50 w-fit  px-5 shadow">
+              <div className="flex justify-center items-center gap-1">
+                <Link to={'/StudyDestination'}>
+                  <button className="flex items-center  gap-1">
+                    <p className="text-sm font-semibold">Study Destination</p>
+                  </button></Link>
+                <SmallNavButton ind={1} />
+              </div>
+
+              <div className="flex justify-center items-center gap-1">
+                <Link to={"/services"}>
+                  <button className="flex items-center gap-1">
+                    <p className="font-semibold">Services</p>
+                  </button>
+                </Link>
+                <SmallNavButton ind={2} />
+              </div>
+
+              <div className="flex justify-center items-center gap-1">
+                <button className="flex items-center gap-1">
+                  <p className="font-semibold">Test Prep.</p>
+                </button>
+                <SmallNavButton ind={3} />
+              </div>
+
+              <div className="flex justify-center items-center gap-1">
+                <Link to={"/about"}>
+                  <button>
+                    <p className="  font-semibold">About</p>
+                  </button>
+                </Link>
+                <SmallNavButton ind={4} text="About Us" />
+              </div>
+
+              <button className="bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl">
+                Log In
+              </button>
+            </ul>
+          </details>
+        </div>
+
         <div className="hidden items-center justify-between my-5 lg:flex gap-6  ">
           <div className="flex items-center gap-1">
             <Link to={'/StudyDestination'}>
-            <button className="flex items-center gap-1">
-              <p className="bg-[#F0F8FF] font-semibold">Study Destination</p>
-            </button></Link>
-            <NavButton ind={1} />
+              <NavButton text='Study Destination' ind={1} />
+            </Link>
           </div>
 
           <div className="flex items-center gap-1">
             <Link to={"/services"}>
-              <button className="flex items-center gap-1">
-                <p className="bg-[#F0F8FF] font-semibold">Services</p>
-              </button>
+              <NavButton text='Services' ind={2} />
             </Link>
-            <NavButton ind={2} />
           </div>
 
           <div className="flex items-center gap-1">
-            <button className="flex items-center gap-1">
-              <p className="bg-[#F0F8FF] font-semibold">Test Prep.</p>
-            </button>
-            <NavButton ind={3} />
+            <NavButton text='Test Prep.' ind={3} />
           </div>
 
           <div className="flex items-center gap-1">
             <Link to={"/about"}>
-              <button>
-                <p className="bg-[#F0F8FF] font-semibold">About</p>
-              </button>
+
+              <NavButton ind={4} text="About Us" />
             </Link>
-            <NavButton ind={4} text="About Us" />
           </div>
 
           <button className="bg-[#BFDBFE] col-span-2  font-bold px-5 py-2 rounded-2xl">
